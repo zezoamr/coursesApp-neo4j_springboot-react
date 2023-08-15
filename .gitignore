@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+src/main/resources/.env
+Neo4j-d1af22cb-Created-2023-08-14.txt
