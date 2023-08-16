@@ -51,4 +51,13 @@ public class Course {
     } // empty constructor required for neo4j
 
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", identifier='" + identifier + '\'' +
+                ", title='" + title + '\'' +
+                ", teacher='" + teacher + '\'' +
+                '}';
+    }
 }
