@@ -39,7 +39,7 @@ public class CourseController {
             enrolledInCourses = new ArrayList<>();
         }
         List<CourseDTO> responseCourses = courses.stream().map(course -> {
-            CourseDTO responseCourse = new CourseDTO(course.getTitle(), course.getIdentifier(), course.getTeacher());
+            CourseDTO responseCourse = new CourseDTO(course.getIdentifier(), course.getTitle(), course.getTeacher());
             responseCourse.setLessons(this.lessonService.getLessonsByCourseIdentifier(course.getIdentifier()));
             if(principal != null) {
                 boolean isEnrolled = enrolledInCourses.stream()
@@ -54,7 +54,7 @@ public class CourseController {
     @GetMapping("/{identifier}")
     public ResponseEntity<CourseDTO> courseByIdentifier(@PathVariable String identifier){
         Course course = this.courseService.getCourseByIdentifier(identifier);
-        CourseDTO responseCourse = new CourseDTO(course.getTitle(), course.getIdentifier(), course.getTeacher());
+        CourseDTO responseCourse = new CourseDTO(course.getIdentifier(), course.getTitle(),  course.getTeacher());
         responseCourse.setLessons(this.lessonService.getLessonsByCourseIdentifier(identifier));
         return new ResponseEntity<>(responseCourse, HttpStatus.OK);
     }

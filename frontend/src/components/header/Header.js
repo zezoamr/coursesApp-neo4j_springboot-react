@@ -21,18 +21,19 @@ const Header = () => {
     }
 
     return (
-        <Navbar>
+        <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href='/' className='menu-link' style={{ 'color': 'white' }}>
                     <FontAwesomeIcon icon={faGraduationCap}></FontAwesomeIcon>
                 </Navbar.Brand>
+                <Navbar.Collapse>
                 <Navbar.Toggle />
                 <Nav
-                    className='ms-auto my-2 my-lg-0'
-                    style={{ "maxHeight": "100px" }}
-                    navbarScroll
-                >
-
+                className='me-auto my-2 my-lg-0'
+                style={{maxHeight: '100px'}}
+                navbarScroll>
+                    <NavLink className="nav-link" to ="/">Home</NavLink>  
+                    <NavLink className="nav-link" to ="/EnrolledCourses">Enrolled Courses</NavLink> 
                 </Nav>
                 {
                     auth?.user ?
@@ -44,6 +45,7 @@ const Header = () => {
                             <Button variant='info' className='me-2' onClick={() => handleNav("/Login")} >Login</Button>
                         </>
                 }
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     )

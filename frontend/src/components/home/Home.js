@@ -34,8 +34,11 @@ const Home = () => {
       <Spinner loadSpinner={isLoading} />
       <div className='container'>
         {
-          !auth?.user ? <img src={HeroImage}
-            alt="HeroImage" /> : (courseData) ? courseData.map((d) => {
+          !auth?.user?
+          <img src={HeroImage} alt = "HeroImage" />
+          :
+            (courseData) ? courseData.map((d) => {
+              console.log(d)
               return (
                 <div key={
                   d.identifier
@@ -45,7 +48,9 @@ const Home = () => {
                   <div className="card-header-layout">
                     <p className="card-header text-secondary bg-white">
                       <span className='course-title'>
-                        <Link to={`/Course/${d.identifier}`}>{d.title} </Link>
+                      <Link to = {`/Course/${d.identifier}`}>
+                            {d.title}
+                          </Link>
                       </span>
                     </p>
                   </div>

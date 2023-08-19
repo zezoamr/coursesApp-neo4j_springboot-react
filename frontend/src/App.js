@@ -5,6 +5,10 @@ import Register from './components/register/Register';
 import Layout from './components/Layout';
 import {Routes, Route} from 'react-router-dom';
 import Login from './components/login/Login';
+import Course from './components/course/Course';
+import EnrolledCourses from './components/enrolledCourses/EnrolledCourses';
+import RequiredAuth from './components/RequiredAuth';
+import Video from './components/video/Video';
 
 function App() {
   return (
@@ -15,7 +19,11 @@ function App() {
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Register' element={<Register/>}></Route>
           <Route path='/Login' element={<Login/>}></Route>
-          <Route path='/Layout' element={<Layout/>}></Route>
+          <Route path = "/Course/:identifier" element = {<Course/>}></Route>
+              <Route path = "/Video/:ytId" element={<Video/>}></Route>
+              <Route element ={<RequiredAuth/>}>
+                <Route path = "/EnrolledCourses" element={<EnrolledCourses/>}></Route>
+              </Route>
         </Route>
       </Routes>
     </div>
