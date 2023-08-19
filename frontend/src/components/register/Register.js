@@ -28,6 +28,7 @@ const Register = () => {
     const USER_REGEX = /^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
     const PWD_REGX = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    //at least 8 characters, including at least one letter, one number, and one special character.
 
     const [submitSuccess, setSubmitSuccess] = useState("");
 
